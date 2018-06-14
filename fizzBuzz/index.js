@@ -1,6 +1,6 @@
 'use strict';
 const handleSubmit = function(){
-  $('number-chooser').submit(function(ev) {
+  $('#number-chooser').submit(function(ev) {
     ev.preventDefault();
     let  results =[];
     const count = parseInt($(this).find('input[name = "number-choice"]').val());
