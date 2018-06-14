@@ -1,8 +1,8 @@
 //traverse DOM add and remove elements and apply styles
 //
 'use strict';
-const handleAdd = function(){
-  $('#js-shopping-list-form').submit(function(event){
+const main = function () {
+  $('#js-shopping-list-form').submit(function (event) {
     event.preventDefault();
     const newItem = $(this).find('input[name="shopping-list-entry"]').val();
     $('.shopping-list').append(`
@@ -18,14 +18,17 @@ const handleAdd = function(){
     </div>
   </li>
    `);
+  });
+  $('.shopping-item-toggle').click(function (event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+  });
 
 
+  $('.shopping-list').on('click', '.shopping-item-delete', function (event) {
+    //.click(function(event) {
+    $(this).closest('li').remove();
   });
 };
-$(handleAdd());
-const handleRemove = function(){
 
-};
+$(main());
 
-
-      
