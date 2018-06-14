@@ -7,6 +7,11 @@ $(() => {
   createAndPlaceRows(8);
 
   // Bind your event listeners here:
+  $('.grid').on('mouseover', '.cell', function (event) {
+    event.preventDefault(); $(this).addClass('.active');
+
+
+  });
 });
 
 
